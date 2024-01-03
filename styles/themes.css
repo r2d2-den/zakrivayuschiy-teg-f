@@ -1,6 +1,62 @@
-/* В этом файле вы опишете значения переменных в разных цветовых схемах.
-Придерживайтесь такого именования классов:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
-*/
+
+:root.theme-light{
+  --main-font: "Inter-Variable";
+  --accent-font:"PressStart2P-Regular";
+  --main-weight: 400;
+  --accent-weight:700;
+  --accent-color: #000;
+  --text-button-color: #FFF;
+  --bg-color: #FFF;
+  --stroke-color: #FFF;
+  --bg-gradient: repeating-linear-gradient(90deg, #d3d3d3 , transparent 2px),
+  repeating-linear-gradient(0deg, #d3d3d3 , transparent 2px),
+  linear-gradient(#e7e7e7, #1a1a1a);  ;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-font: "Inter-Variable";
+  --accent-font:"PressStart2P-Regular";
+  --main-weight: 400;
+  --accent-weight:700;
+  --accent-color: #000;
+  --text-button-color: #FFF;
+  --bg-color: #FFF;
+  --stroke-color: #FFF;
+  --bg-gradient: repeating-linear-gradient(90deg, #d3d3d3 , transparent 2px),
+  repeating-linear-gradient(0deg, #d3d3d3 , transparent 2px),
+  linear-gradient(#e7e7e7, #1a1a1a);  ;
+  }
+}
+
+:root.theme-dark{
+  --main-font: "Inter-Variable";
+  --accent-font:"PressStart2P-Regular";
+  --main-weight: 465;
+  --accent-weight:785;
+  --accent-color: #00CC14;
+  --text-button-color: #00CC14;
+  --bg-color: #000;
+  --stroke-color: #000;
+  --bg-gradient: repeating-linear-gradient(90deg, #000 , transparent 2px),
+  repeating-linear-gradient(0deg, #000 , transparent 2px),
+  linear-gradient(#007f0c, #004306);  ;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-font: "Inter-Variable";
+    --accent-font:"PressStart2P-Regular";
+    --main-weight: 465;
+    --accent-weight:785;
+    --accent-color: #00CC14;
+    --text-button-color: #00CC14;
+    --bg-color: #000;
+    --stroke-color: #000;
+    --bg-gradient: repeating-linear-gradient(90deg, #000 , transparent 2px),
+  repeating-linear-gradient(0deg, #000 , transparent 2px),
+  linear-gradient(#007f0c, #004306);  ;
+  }
+  
+}
+
