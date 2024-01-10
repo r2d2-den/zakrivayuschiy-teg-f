@@ -1,14 +1,102 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
+.theme-menu__button:focus-visible::after,
+.theme-menu__button:hover,
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+  transition: 0.3s ease;
+}
 
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ theme-dark — класс тёмной темы
-✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
 
-Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
-*/
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+@keyframes loading {
+  0% {
+    transform: translate(0);
+  }
+  50% {
+    transform: translate(4px);
+  }
+  100% {
+    transform: translate(0px);
+  }
+}
+
+.card__icon-button:hover .main-body,
+.card__icon-button:hover .core {
+  fill: var(--accent-color, #000);
+}
+
+.card__icon-button:hover .main-body,
+.card__icon-button:active .main-body {
+  transition: fill 0.3s 0.03s;
+}
+
+.card__icon-button:hover .core,
+.card__icon-button:active .core {
+  transition: fill 0.3s;
+}
+
+.card__icon-button:active .main-body,
+.card__icon-button:active .core,
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body {
+  fill: var(--color-heart, red);
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s 0.3s ease-in;
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart 0.3s 0.1s ease-in;
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+
+.empy-head__image {
+  animation: empy-head 10s infinite;
+}
+
+@keyframes empy-head {
+  from {
+    filter: opacity(1) blur(0.1rem);
+  }
+  to {
+    filter: opacity(0);
+  }
+}
+
+.perfect__image {
+  animation: perfect 10s infinite;
+}
+
+@keyframes perfect {
+  from {
+    filter: hue-rotate(0);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
